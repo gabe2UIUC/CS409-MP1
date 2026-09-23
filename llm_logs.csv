@@ -1,2 +1,1064 @@
-example_chatgpt_log_link1
-example_bing_chat_log_link2
+I don't a lot of logs because I primarily used Google Gemini indirectly through the search bar.
+However, here are some debugging logs:
+Some of the flex container columns (basically squares) aren't the same height at specific aspect ratios. How can I make each square the same height? /* Your SCSS here. */
+
+$primary-color: #3f5eab;
+
+$primary-padding: 2vh 5vw;
+
+
+
+@mixin flex-center {
+
+display: flex;
+
+align-items: center;
+
+}
+
+
+
+@keyframes fade-in {
+
+from {
+
+opacity: 0;
+
+}
+
+to {
+
+opacity: 1;
+
+}
+
+}
+
+
+
+html {
+
+scroll-behavior: smooth;
+
+scroll-padding-top: 85px;
+
+}
+
+
+
+/* Navigation bar styling */
+
+body {
+
+margin: 0;
+
+font-family: 'Courier New', Courier, monospace;
+
+
+
+background-image: url('../assets/image.jpg');
+
+background-attachment: fixed;
+
+background-position: center 0px;
+
+background-repeat: no-repeat;
+
+background-size: cover;
+
+
+
+// General size guidelines for text
+
+h1 {
+
+font-size: 100px;
+
+}
+
+h2 {
+
+font-size: 45px;
+
+}
+
+h3 {
+
+font-size: 30px;
+
+}
+
+p {
+
+font-size: 20px;
+
+}
+
+
+
+.navbar {
+
+position: sticky;
+
+height: 85px;
+
+top: 0;
+
+z-index: 100;
+
+padding: 5px 30px;
+
+@include flex-center;
+
+justify-content: space-between;
+
+
+background-color: $primary-color;
+
+color: white;
+
+
+
+transition: height 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
+
+&.shrunken {
+
+height: 55px;
+
+padding: 2px 30px;
+
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+
+ul {
+
+list-style: none;
+
+display: flex;
+
+gap: 70px;
+
+padding: 0 30px;
+
+
+li {
+
+a {
+
+color: white;
+
+text-decoration: none;
+
+font-size: 20px;
+
+
+
+&.active, &:hover {
+
+border-bottom: 2px solid white;
+
+opacity: 0.9;
+
+}
+
+}
+
+}
+
+}
+
+}
+
+
+#welcome-text {
+
+height: calc(100vh - 85px);
+
+@include flex-center;
+
+justify-content: center;
+
+text-align: center;
+
+margin-top: -85px;
+
+
+
+opacity: 0;
+
+animation: fade-in 2s ease-in;
+
+animation-fill-mode: forwards;
+
+
+h1 {
+
+background-color: black;
+
+color: white;
+
+}
+
+}
+
+
+
+main {
+
+background-color: white;
+
+padding: $primary-padding;
+
+text-align: center;
+
+
+
+.section {
+
+padding: $primary-padding;
+
+
+
+.flex-container {
+
+@include flex-center;
+
+flex-direction: column;
+
+margin-top: 50px;
+
+
+
+.flex-row {
+
+@include flex-center;
+
+flex-direction: row;
+
+width: 70vw;
+
+justify-content: space-between;
+
+margin: 10px 0;
+
+
+
+.flex-column {
+
+border-radius: 15px;
+
+padding: auto 0;
+
+background-image: linear-gradient(#528dd1, $primary-color);
+
+width: 30%;
+
+cursor: pointer;
+
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+
+h3 {
+
+color: white;
+
+}
+
+
+
+&:hover {
+
+transform: translateY(-4px);
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+}
+
+}
+
+}
+
+
+
+#course-modal {
+
+border: none;
+
+padding: $primary-padding;
+
+max-width: 75vw;
+
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+
+
+&::backdrop {
+
+background-color: rgba(0, 0, 0, 0.6);
+
+backdrop-filter: blur(3px);
+
+}
+
+
+
+button {
+
+margin-top: 20px;
+
+padding: 8px 18px;
+
+background-color: $primary-color;
+
+color: white;
+
+border: none;
+
+border-radius: 6px;
+
+cursor: pointer;
+
+font-size: 16px;
+
+
+
+&:hover {
+
+opacity: 0.9;
+
+}
+
+}
+
+}
+
+
+
+.carousel-container {
+
+position: relative;
+
+overflow: hidden;
+
+border: 2px solid black;
+
+margin: 50px 0;
+
+height: 300px;
+
+
+
+.carousel-track {
+
+display: flex;
+
+transition: transform 0.5s ease-in-out;
+
+height: 100%;
+
+width: 100%;
+
+
+
+.carousel-item {
+
+min-width: 100%;
+
+box-sizing: border-box;
+
+text-align: left;
+
+padding: $primary-padding;
+
+height: 100%;
+
+background-position: center;
+
+
+
+h3, p {
+
+background-color: black;
+
+color: white;
+
+padding: 4px 16px;
+
+-webkit-box-decoration-break: clone;
+
+box-decoration-break: clone;
+
+}
+
+}
+
+
+
+#ng-one {
+
+background-image: url('../assets/NGOne.jpg');
+
+background-size: cover;
+
+}
+
+#ng-two {
+
+background-image: url('../assets/NGTwo.avif');
+
+background-size: cover;
+
+}
+
+#future {
+
+background-image: url('../assets/Future.jpg');
+
+background-size: cover;
+
+}
+
+}
+
+
+
+.carousel-button {
+
+position: absolute;
+
+top: 50%;
+
+transform: translateY(-50%);
+
+background-color: rgba(0, 0, 0, 0.5);
+
+color: white;
+
+cursor: pointer;
+
+padding: 16px;
+
+font-size: 18px;
+
+transition: background-color 0.3s;
+
+}
+
+
+
+.carousel-button:hover {
+
+background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+
+#carousel-prev { left: 10px; }
+
+#carousel-next { right: 10px; }
+
+}
+
+
+
+.contact-info-container {
+
+@include flex-center;
+
+justify-content: space-between;
+
+padding: 50px 0 70px;
+
+
+
+.contact-info {
+
+@include flex-center;
+
+gap: 30px;
+
+
+
+i {
+
+font-size: 48px;
+
+color: $primary-color;
+
+}
+
+p {
+
+font-size: 25px;
+
+}
+
+a {
+
+font-size: 20px;
+
+}
+
+}
+
+}
+
+}
+
+}
+
+
+
+.feet {
+
+background-color: $primary-color;
+
+color: white;
+
+padding: $primary-padding;
+
+text-align: center;
+
+
+
+p {
+
+padding: 30px;
+
+}
+
+
+
+.social-media-container {
+
+display: flex;
+
+gap: 40px;
+
+justify-content: center;
+
+
+
+i {
+
+font-size: 48px;
+
+color: white;
+
+}
+
+}
+
+
+
+#copyright {
+
+padding: 50vh 0 20px;
+
+}
+
+}
+
+} 
+
+The uneven height issue stems from two main causes in your current SCSS setup:
+
+align-items: center in @mixin flex-center: In .flex-row, this mixin sets align-items: center, which forces flex items to collapse around their content height rather than stretching to fill the row height (align-items: stretch is the flexbox default).
+
+Missing aspect ratio lock: Set sizing via modern CSS aspect-ratio to force card boxes into dynamic squares regardless of content variation across screen sizes.
+
+Solution 1: Use Native CSS Aspect-Ratio (Recommended)
+Add aspect-ratio: 1 / 1 directly to .flex-column, adjust alignment on .flex-row, and use flexbox internally to center the h3 content:
+
+SCSS
+.flex-row {
+    @include flex-center;
+    flex-direction: row;
+    width: 70vw;
+    justify-content: space-between;
+    align-items: stretch; // Override mixin's align-items: center so children can match height
+    margin: 10px 0;
+
+    .flex-column {
+        border-radius: 15px;
+        background-image: linear-gradient(#528dd1, $primary-color);
+        width: 30%;
+        aspect-ratio: 1 / 1; // Guarantees a square aspect ratio regardless of viewport width
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        // Use flexbox internally to center content vertically and horizontally inside the square
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 10px;
+
+        h3 {
+            color: white;
+            margin: 0;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+Solution 2: Lock Equal Heights Without Enforcing a Square Shape
+If you want the columns in a row to always match each other's height—allowing the tallest child's content to dictate the height for all squares—remove the aspect ratio lock and let flex stretching align the bottoms:
+
+SCSS
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    justify-content: space-between;
+    align-items: stretch; // Forces all columns in the row to match the tallest item's height
+    margin: 10px 0;
+
+    .flex-column {
+        border-radius: 15px;
+        background-image: linear-gradient(#528dd1, $primary-color);
+        width: 30%;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        // Centers the heading inside the stretched column
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        h3 {
+            color: white;
+            margin: 0;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+Also, when I resize it to 768x1024 it looks like the screen is kind of squashed because the Contact part goes off the edge of the navbar and i can see the image on the right of the screen
+
+This layout overflow occurs due to fixed viewport-width (vw) and static padding values breaking on tablet-sized displays like 768px:
+
+Fixed layout widths using vw: .flex-row and #course-modal are set to 70vw / 75vw. At 768px width, the content inside (like long list items or titles) forces horizontal scroll overflow.
+
+Fixed gap in navbar: gap: 70px on ul inside .navbar is too wide for a 768px display, pushing the "Contact" link past the right edge of the sticky bar.
+
+No horizontal overflow protection: The body allows horizontal scrolling, exposing the background-image attachment area on the right edge.
+
+Solution: Media Queries & Responsive Refactoring
+Add media query overrides to handle tablet viewports (like 768x1024), wrap navbar items, and prevent horizontal scrolling on the root container.
+
+1. Prevent Root Horizontal Scrolling
+Add overflow-x: hidden to html and body in your root styling block:
+
+SCSS
+html, body {
+    overflow-x: hidden; // Prevents any horizontal scrollbars and stops background leaking on the right
+    max-width: 100vw;
+}
+2. Responsive Navbar
+Update the .navbar SCSS block so the spacing scales down on smaller viewports:
+
+SCSS
+.navbar {
+    position: sticky;
+    height: 85px;
+    top: 0;
+    z-index: 100;
+    padding: 5px 30px;
+    @include flex-center;
+    justify-content: space-between;
+    box-sizing: border-box; // Ensures padding doesn't push width beyond 100%
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 30px; // Reduced from 70px to fit on 768px screens
+        padding: 0;
+        margin: 0;
+
+        @media (max-width: 768px) {
+            gap: 15px; // Tightens links further on tablets
+            
+            li a {
+                font-size: 16px; // Slightly scale down text size if needed
+            }
+        }
+    }
+}
+3. Responsive Flex Container & Rows
+Update .flex-row inside main .section to use flexible percentages and switch to a stacked column layout on tablet viewports:
+
+SCSS
+.flex-row {
+    @include flex-center;
+    flex-direction: row;
+    width: 90%; // Changed from fixed 70vw to 90% for fluid layout on smaller screens
+    max-width: 1100px;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 10px auto; // Centers the row
+
+    @media (max-width: 768px) {
+        flex-direction: column; // Stacks squares vertically on tablet/mobile screens
+        width: 100%;
+        gap: 20px;
+
+        .flex-column {
+            width: 80% !important; // Expands square size when stacked
+            aspect-ratio: 1 / 1;
+        }
+    }
+}
+If i go to resolution 768x1024 is it normal for the navbar to disappear completely
+
+No, that is not normal behavior. A sticky navigation bar should remain visible at the top of the viewport regardless of screen resolution.
+
+The reason your .navbar disappears when resizing to a portrait aspect ratio like 768x1024 is caused by the interaction between two specific CSS properties in your SCSS:
+
+The Negative Top Margin on #welcome-text:
+
+SCSS
+#welcome-text {
+    height: calc(100vh - 85px);
+    margin-top: -85px; /* <--- THIS IS THE PROBLEM */
+    ...
+}
+Pulling #welcome-text up by -85px causes it to overlap directly on top of the .navbar.
+
+Z-Index Stacking Context:
+While .navbar has z-index: 100, because .navbar uses position: sticky, its stacking context behaves differently when scrolling or resizing on taller aspect ratios (like 1024px vertical height). As the page recalculates dimensions, #welcome-text is being rendered on top of the navbar, hiding it completely under a background box or text element.
+
+How to Fix It
+Remove margin-top: -85px from #welcome-text and rely on display: flex alignment instead. Since #welcome-text sits below a sticky header, setting its height to calc(100vh - 85px) naturally fills the rest of the screen without needing negative margins.
+
+Update your #welcome-text SCSS block like this:
+
+SCSS
+#welcome-text {
+    height: calc(100vh - 85px);
+    @include flex-center;
+    justify-content: center;    
+    text-align: center;
+    /* margin-top: -85px;  <-- REMOVE THIS LINE completely */
+
+    opacity: 0;
+    animation: fade-in 2s ease-in;
+    animation-fill-mode: forwards;
+
+    h1 {
+        background-color: black;
+        color: white;
+    }
+}
+Verification
+Save your SCSS and refresh the page at 768x1024.
+
+Ensure the navbar remains fixed at the top 85px of the screen without getting covered by the welcome banner image or text.
+
+That didn't do anything. I scroll and the navbar doesnt stick
+
+When position: sticky stops working completely upon scrolling, it is almost always caused by an ancestor container clipping the sticky element's scroll context.
+
+In your SCSS code, there are two distinct properties causing this behavior:
+
+Cause 1: overflow-x: hidden on body / html
+Earlier we added overflow-x: hidden to prevent side-scrolling. Setting any overflow property (even just overflow-x) on a parent container breaks position: sticky in modern browsers.
+
+The browser treats any container with non-visible overflow as a scroll container, which disconnects the element from scrolling relative to the main viewport window.
+
+Fix: Move overflow handling to an inner wrapper instead of body / html
+Remove overflow-x: hidden from html and body. If you need to stop elements from breaking layout bounds horizontally, clip individual sections or apply overflow-x: clip (which preserves stickiness in modern browsers):
+
+SCSS
+html, body {
+    // DO NOT use overflow-x: hidden here — it breaks position: sticky
+    overflow-x: clip; // Works in modern browsers without breaking position: sticky
+    margin: 0;
+}
+Cause 2: body Background and Ancestor Nesting
+In your SCSS structure, .navbar is nested inside body. Depending on how the HTML is structured:
+
+Verify .navbar is a direct child of body: If .navbar is wrapped inside a <header> or <div class="wrapper">, position: sticky only sticks within the height of that parent div. Once you scroll past that wrapper, the navbar scrolls off-screen with it.
+
+Check parent height: If .navbar is inside a parent container without an explicit height or overflowing boundaries, the sticky reference box collapses.
+
+Ensure your HTML structure looks like this:
+
+HTML
+<body>
+  <nav class="navbar">...</nav>
+  <div id="welcome-text">...</div>
+  <main>...</main>
+</body>
+Cleaned Sticky SCSS Fix
+Update your .navbar block to enforce top: 0 and standard layout bounds:
+
+SCSS
+body {
+    margin: 0;
+    overflow-x: clip; // Prevents horizontal scroll leaks without breaking sticky positioning
+    font-family: 'Courier New', Courier, monospace;
+
+    .navbar {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 85px;
+        z-index: 9999; // Ensure it stays on top of all section content
+        box-sizing: border-box;
+        
+        @include flex-center;
+        justify-content: space-between;
+        background-color: $primary-color;
+        color: white;
+
+        // ... rest of your navbar styles
+    }
+}
+video {
+
+src: url(../assets/Monkey.mp4);
+
+} video not showing
+
+In CSS and SCSS, src: url(...) is not valid syntax for a <video> element. The src descriptor with url() is only used inside @font-face rules.
+
+Additionally, CSS alone cannot load or play a video file into a standard <video> HTML element—the file path must be specified directly in your HTML code.
+
+Step 1: Fix the HTML Code
+Set the path to your video file directly on the <video> tag or inside a <source> child element:
+
+HTML
+<video autoplay loop muted playsinline class="bg-video">
+    <source src="../assets/Monkey.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+Note: Browsers require the muted attribute if you want the video to autoplay automatically on page load.
+
+Step 2: Fix the SCSS Code
+Use CSS only to control the size, position, and layout of the video (e.g., if you are using it as a background video or full-width section):
+
+SCSS
+/* Target the video element for sizing and display */
+video.bg-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover; // Scales the video to cover its container without distorting
+    display: block;
+}
+Verification
+Open your browser's Developer Tools (F12) and check the Console and Network tabs.
+
+Verify that the video loads with a 200 status code rather than a 404 Not Found error. If you get a 404, check that your relative path (../assets/Monkey.mp4) correctly points to the location of your HTML file.
+
+ERROR in   Error: Child compilation failed:
+
+  Module not found: Error: Can't resolve '../assets/Monkey.mp4' in '/Users/gabeschwarz/CS409/CS409-MP1/src'
+
+  ModuleNotFoundError: Module not found: Error: Can't resolve '../assets/Monkey.mp4' in '/Users/gabeschwarz/CS409/CS409-MP1/src'
+
+      at /Users/gabeschwarz/CS409/CS409-MP1/node_modules/webpack/lib/Compilation.js:2349:28
+
+This Webpack module resolution error means Webpack is searching for the file at /Users/gabeschwarz/CS409/CS409-MP1/assets/Monkey.mp4, but it cannot find a file at that exact path.
+
+There are three common reasons for this error:
+
+Cause 1: Incorrect Relative Path from src/
+Your current code attempts to resolve ../assets/Monkey.mp4 relative to /Users/gabeschwarz/CS409/CS409-MP1/src. Moving up one level (..) looks inside the project root for an assets/ folder.
+
+Check your file directory structure in VS Code / Terminal:
+
+If assets/ is inside src/ (src/assets/Monkey.mp4):
+Change the path in your file to use ./assets/Monkey.mp4 (one dot):
+
+HTML
+<source src="./assets/Monkey.mp4" type="video/mp4">
+If assets/ is in the root directory (CS409-MP1/assets/Monkey.mp4):
+Keep ../assets/Monkey.mp4, but double-check that the folder name is strictly lowercase (assets) and matches exact casing.
+
+If the file extension or name is cased differently:
+Ensure the filename matches case sensitivity (e.g., monkey.mp4 vs Monkey.mp4 or .MP4 vs .mp4).
+
+Cause 2: Referencing the Path inside HTML (HtmlWebpackPlugin)
+If you are using HtmlWebpackPlugin or raw HTML loading, Webpack parses <source src="..."> tags as module imports.
+
+If your assets folder sits in public/ or dist/ rather than being bundled by Webpack, import the asset directly via JavaScript or require it:
+
+Option A: Import in JavaScript / Component
+JavaScript
+import monkeyVideo from './assets/Monkey.mp4';
+
+// Set src dynamically or via template bindings
+document.querySelector('video source').src = monkeyVideo;
+Option B: Inline Require in HTML (if using EJS/HTML templates)
+HTML
+<video autoplay loop muted playsinline>
+    <source src="<%= require('./assets/Monkey.mp4') %>" type="video/mp4">
+</video>
+Cause 3: Missing Webpack Asset Module Rule (Webpack 5)
+If Webpack finds the file but still fails during compilation, your webpack.config.js may be missing a rule to process .mp4 media assets.
+
+Add this rule under module.rules in your webpack.config.js:
+
+JavaScript
+module.exports = {
+  // ...
+  module: {
+    rules: [
+      {
+        test: /\.(mp4|webm|ogg)$/i,
+        type: 'asset/resource', // Asset modules natively handle media files in Webpack 5
+        generator: {
+          filename: 'assets/videos/[name][ext]'
+        }
+      },
+      // ... your other rules (scss, babel, etc.)
+    ],
+  },
+};
+Verification Step
+Fix the file path to point to the actual folder location relative to /src.
+
+Save the file and restart your Webpack development server (npm start or npx webpack serve).
+
+Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
+Run actions/deploy-pages@v4
+
+(node:2067) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Fetching artifact metadata for "github-pages" in this workflow run
+
+Found 1 artifact(s)
+
+Creating Pages deployment with payload:
+
+{
+
+"artifact_id": 10729722525,
+
+"pages_build_version": "26ca65ad854e3ab93897d43af9ba3304190e2ec8",
+
+"oidc_token": "***"
+
+}
+
+Error: Creating Pages deployment failed
+
+Error: HttpError: Not Found
+
+at /home/runner/work/_actions/actions/deploy-pages/v4/node_modules/@octokit/request/dist-node/index.js:124:1
+
+at processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+at createPagesDeployment (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/api-client.js:125:1)
+
+at Deployment.create (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/deployment.js:74:1)
+
+at main (/home/runner/work/_actions/actions/deploy-pages/v4/src/index.js:30:1)
+
+Error: Error: Failed to create deployment (status: 404) with build version 26ca65ad854e3ab93897d43af9ba3304190e2ec8. Request ID 4818:30B369:40024B:49A76D:6AB33A36 Ensure GitHub Pages has been enabled: https://github.com/gabe2UIUC/CS409-MP1/settings/pages
+
+The Node 20 deprecation warning and punycode warning are non-fatal log messages—they are not causing your deployment to fail.
+
+The actual failure is the HTTP 404 error at the end:
+
+Plaintext
+Error: Error: Failed to create deployment (status: 404)
+Ensure GitHub Pages has been enabled: https://github.com/gabe2UIUC/CS409-MP1/settings/pages
+This 404 status code means GitHub Pages is not configured to receive automated deployments via GitHub Actions yet.
+
+Step 1: Change GitHub Pages Source to "GitHub Actions"
+Go to your repository on GitHub: [https://github.com/gabe2UIUC/CS409-MP1](https://github.com/gabe2UIUC/CS409-MP1)
+
+Click Settings (top navigation tab).
+
+In the left sidebar, click Pages (under Code and automation).
+
+Under Build and deployment -> Source, change the dropdown selection from Deploy from a branch to GitHub Actions.
+
+Step 2: Ensure GitHub Workflow Permissions Are Granted
+Your GitHub Actions workflow requires specific write permissions to create a Pages deployment.
+
+In repository Settings, go to Actions -> General in the left sidebar.
+
+Scroll down to Workflow permissions.
+
+Select Read and write permissions.
+
+Check the box Allow GitHub Actions to create and approve pull requests.
+
+Click Save.
+
+Also, ensure your workflow .github/workflows/deploy.yml includes these permission blocks at the top level:
+
+YAML
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+Step 3: Update actions/checkout and Node Versions (Fixes Warnings)
+To remove the Node 20 and punycode deprecation warnings, update your GitHub Action steps in .github/workflows/deploy.yml to the latest action versions:
+
+YAML
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Setup Node
+    uses: actions/setup-node@v4
+    with:
+      node-version: '22' # Update to Node 22 or 24 LTS
+
+  - name: Upload Pages artifact
+    uses: actions/upload-pages-artifact@v3
+    with:
+      path: './dist' # Ensure this matches your Webpack output directory
+
+  - name: Deploy to GitHub Pages
+    uses: actions/deploy-pages@v4
+Step 4: Re-run the Workflow
+Push a new commit or go to the Actions tab in your repository and manually re-run the failed workflow.
+
+How do I manually rerun
+
+To manually rerun a failed GitHub Actions workflow:
+
+1
+Navigate to the Actions Tab
+Prerequisite
+Go to your repository page at [https://github.com/gabe2UIUC/CS409-MP1](https://github.com/gabe2UIUC/CS409-MP1) and click on the Actions tab along the top menu.
+
+2
+Select the Failed Workflow Run
+10 seconds
+In the left sidebar, click on the name of your workflow (or select All workflows), then click directly on the specific failed run from the list (it will have a red X icon next to it).
+
+3
+Trigger Re-run
+Action
+In the upper-right corner of the run overview page, click the Re-run jobs button and select Re-run all jobs.
+
+Verification: Once clicked, the workflow status will change from a red X to a yellow spinning circle (In progress), indicating that the deployment steps have restarted.
+
+
+
+
+
+Your Google Apps @ Illinois chats aren’t used to improve our models. Gemini is AI and can make m
