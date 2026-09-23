@@ -4,10 +4,183 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <title>MP1</title>
     </head>
     <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+
+        <!-- Sticky Navigation Bar -->
+        <nav class="navbar">
+            <h3>My Website</h3>
+            <ul class="navbar-links">
+                <li><a href="#welcome-text">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Welcome text (in front of a fixed background image) -->
+        <div id="welcome-text">
+            <h1>Welcome to My Website!!</h1>
+        </div>
+
+        <main>
+
+            <!-- About me section -->
+            <div id="about" class="section">
+                <h2>About Me</h2>
+                <p>
+                    Hi! My name is Gabe Schwarz. I am currently a senior at the University of Illinois
+                    at Urbana-Champaign pursuing my Bachelor's in Computer Science and a minor in 
+                    Economics. Outside of school and work, I enjoy weightlifting, playing volleyball,
+                    listening to music, and drawing. My big goal right now is to achieve a 40-inch
+                    vertical jump. Thanks for checking out my website and have a great day!
+                </p>
+            </div>
+
+            <!-- Classes section (uses multi-column layout and modal) -->
+            <div id="classes" class="section">
+                <h2>Classes Taken</h2>
+                <p>
+                    Here are some of the cool and/or important classes I've taken at UIUC:
+                </p>
+                <div class="flex-container">
+                    <div class="flex-row">
+                        <div class="flex-column" 
+                             data-title="CS 222: Software Design" 
+                             data-description="Focuses on understanding software development principles, object-oriented design, teamwork, and building real-world applications.">
+                            <h3>CS 222<br>Software Design</h3>
+                        </div>
+                        <div class="flex-column" 
+                             data-title="CS 225: Data Structures" 
+                             data-description="Covers pointers, lists, trees, graphs, sorting algorithms, and efficient data manipulation in C++.">
+                            <h3>CS 225<br>Data Structures</h3>
+                        </div>
+                        <div class="flex-column" 
+                             data-title="CS 341: Systems Programming" 
+                             data-description="Explores low-level system calls, C programming, processes, threads, POSIX synchronization, memory management, and networking.">
+                            <h3>CS 341<br>Systems Programming</h3>
+                        </div>
+                    </div>
+            
+                    <div class="flex-row">
+                        <div class="flex-column" 
+                             data-title="CS 374: Algorithms & Models of Computation" 
+                             data-description="Covers finite automata, formal languages, dynamic programming, greedy algorithms, graph algorithms, and NP-completeness.">
+                            <h3>CS 374<br>Algorithms</h3>
+                        </div>
+                        <div class="flex-column" 
+                             data-title="CS 409: Web Programming" 
+                             data-description="Hands-on experience with modern full-stack web application development, databases, APIs, and front-end frameworks.">
+                            <h3>CS 409<br>Web Programming</h3>
+                        </div>
+                        <div class="flex-column" 
+                             data-title="CS 411: Database Systems" 
+                             data-description="Covers relational database design, SQL querying, indexing, transaction processing, and relational algebra.">
+                            <h3>CS 411<br>Database Systems</h3>
+                        </div>
+                    </div>
+            
+                    <div class="flex-row">
+                        <div class="flex-column" 
+                             data-title="CS 415: Game Development" 
+                             data-description="Explores interactive game design, real-time physics engines, asset management, state machines, and game architecture.">
+                            <h3>CS 415<br>Game Development</h3>
+                        </div>
+                        <div class="flex-column" 
+                             data-title="CS 418: Computer Graphics" 
+                             data-description="Covers 2D and 3D transformations, rasterization, shading models, OpenGL, lighting models, and texture mapping.">
+                            <h3>CS 418<br>Computer Graphics</h3>
+                        </div>
+                        <div class="flex-column" 
+                             data-title="CS 438: Computer Networks" 
+                             data-description="Covers network protocols across the TCP/IP stack, socket programming, routing algorithms, congestion control, and network security.">
+                            <h3>CS 438<br>Computer Networks</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <dialog id="course-modal">
+                    <h3 id="modal-title">Course Title</h3>
+                    <p id="modal-description">This is where the course description will go.</p>
+                    <button id="close-modal-button">X</button>
+                </dialog>
+            </div>
+
+            <!-- Work Experiences (uses carousel) -->
+            <div id="work" class="section">
+                <h2>Work Experience</h2>
+                <p>
+                    My work experiences in relation to Computer Science:
+                </p>
+
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-item" id="ng-one">
+                            <h3>Northrop Grumman - Software Engineer Intern 2025</h3>
+                            <p>
+                                This was the summer of 2025 internship. Used C# to create drivers and stubs for third-party 
+                                devices. Created GUIs with the MVVM framework in XAML. 
+                            </p>
+                        </div>
+                        <div class="carousel-item" id="ng-two">
+                            <h3>Northrop Grumman - Software Engineer Intern 2026</h3>
+                            <p>
+                                This was the summer of 2026 internship. I used Python to create tools that were capable of turning
+                                binary images into a series of commands with necessary headers and checksums. I worked on implementing
+                                an additional functionality for a satellite's flight software in C. 
+                            </p>
+                        </div>
+                        <div class="carousel-item" id="future">
+                            <h3>Hopefully you!</h3>
+                            <p>I am currently in my last semester of college and will be needing a full-time job soon!</p>
+                        </div>
+                    </div>
+
+                    <button class="carousel-button" id="carousel-prev" aria-label="Previous">&#10094;</button>
+                    <button class="carousel-button" id="carousel-next" aria-label="Next">&#10095;</button>
+                </div>
+            </div>
+
+            <!-- Contact Information (uses vector and social media icons) -->
+            <div id="contact" class="section">
+                <h2>Contact Information</h2>
+                <p>
+                    Here's how you can contact me:
+                </p>
+
+                <div class="contact-info-container">
+                    <div class="contact-info">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>Email:</p>
+                        <a href="mailto:gschwar06@gmail.com">gschwar06@gmail.com</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>Phone Number:</p>
+                        <a href="tel:+16186981308">(618)-698-1308</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        
+        <footer class="feet">
+            <p>My Social Media</p>
+            <div class="social-media-container">
+                <a href="https://www.instagram.com/gabeschwarz/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/gabe-schwarz-601028273/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/GabeSchwarz"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+            <video autoplay loop muted playsinline>
+                <source src="/assets/Monkey.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <p id="copyright">&copy; 2026 Gabriel Schwarz. All rights reserved.</p>
+        </footer>
     </body>
 </html>

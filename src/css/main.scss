@@ -1,1 +1,301 @@
 /* Your SCSS here. */
+$primary-color: #3f5eab;
+$primary-padding: 2vh 5vw;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px; 
+}
+html, body {
+    max-width: 100vw;
+}
+
+/* Navigation bar styling */
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+
+    background-image: url('../assets/image.jpg'); 
+    background-attachment: fixed; 
+    background-position: center 0px; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+
+    // General size guidelines for text
+    h1 {
+        font-size: 8vh;
+    }
+    h2 {
+        font-size: 45px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 20px;
+    }
+
+    .navbar {
+        position: sticky;
+        height: 85px;
+        top: 0;
+        z-index: 100;
+        padding: 5px 30px;
+        @include flex-center;
+        justify-content: space-between;
+    
+        background-color: $primary-color;
+        color: white;
+
+        transition: height 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
+        &.shrunken {
+            height: 55px;
+            padding: 2px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+            padding: 0 30px;
+    
+            li {
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 20px;
+
+                    &.active, &:hover {
+                        border-bottom: 2px solid white;
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+    }
+    
+    #welcome-text {
+        height: calc(100vh - 85px);
+        @include flex-center;
+        justify-content: center;    
+        text-align: center;
+        margin-top: -85px;
+
+        opacity: 0;
+        animation: fade-in 2s ease-in;
+        animation-fill-mode: forwards;
+    
+        h1 {
+            background-color: black;
+            color: white;
+        }
+    }
+
+    main {
+        background-color: white;
+        padding: $primary-padding;
+        text-align: center;
+
+        .section {
+            padding: $primary-padding;
+
+            .flex-container {
+                @include flex-center;
+                flex-direction: column;
+                margin-top: 50px;
+
+                .flex-row {
+                    display: flex;
+                    flex-direction: row;
+                    width: 70vw;
+                    justify-content: space-between;
+                    margin: 10px 0;
+
+                    .flex-column {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 15px;
+                        padding: auto 0;
+                        background-image: linear-gradient(#528dd1, $primary-color);
+                        width: 30%;
+                        cursor: pointer;
+                        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+                        h3 {
+                            color: white;
+                            font-size: 2vw;
+                        }
+
+                        &:hover {
+                            transform: translateY(-4px);
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                        }
+                    }
+                }
+            }
+
+            #course-modal {
+                border: none;
+                padding: $primary-padding;
+                max-width: 75vw;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+                &::backdrop {
+                    background-color: rgba(0, 0, 0, 0.6);
+                    backdrop-filter: blur(3px);
+                }
+
+                button {
+                    margin-top: 20px;
+                    padding: 8px 18px;
+                    background-color: $primary-color;
+                    color: white;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 16px;
+
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+
+            .carousel-container {
+                position: relative;
+                overflow: hidden;
+                margin: 50px 0;
+                height: 300px;
+
+                .carousel-track {
+                    display: flex;
+                    transition: transform 0.5s ease-in-out;
+                    height: 100%;
+                    width: 100%;
+
+                    .carousel-item {
+                        min-width: 100%;
+                        box-sizing: border-box;
+                        text-align: left;
+                        padding: 0 5vw;
+                        height: 100%;
+                        background-position: center;
+
+                        h3, p {
+                            background-color: black;
+                            color: white;
+                            padding: 0px 0px 4px;
+                            -webkit-box-decoration-break: clone;
+                            box-decoration-break: clone;
+                        }
+                    }
+
+                    #ng-one {
+                        background-image:  url('../assets/NGOne.jpg');
+                        background-size: cover; 
+                    }
+                    #ng-two {
+                        background-image: url('../assets/NGTwo.avif');
+                        background-size: cover;
+                    }
+                    #future {
+                        background-image: url('../assets/Future.jpg');
+                        background-size: cover; 
+                    }
+                }
+
+                .carousel-button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    color: white;
+                    cursor: pointer;
+                    padding: 1.5vw;
+                    font-size: 1.6vw;
+                    transition: background-color 0.3s;
+                }
+
+                .carousel-button:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+                  
+                #carousel-prev { left: 0.5vw; }
+                #carousel-next { right: 0.5vw; }
+            }
+
+            .contact-info-container {
+                @include flex-center;
+                justify-content: center;
+                padding: 50px 0 70px;
+                //margin: 0 -3vw;
+                gap: 8vw;
+
+                .contact-info {
+                    @include flex-center;
+                    gap: 1vw;
+
+                    i {
+                        font-size: 2vw;
+                        color: $primary-color;
+                    }
+                    p {
+                        font-size: 15px;
+                    }
+                    a {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .feet {
+        background-color: $primary-color;
+        color: white;
+        padding: $primary-padding;
+        text-align: center;
+
+        p {
+            padding: 30px;
+        }
+
+        .social-media-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+
+            i {
+                font-size: 48px;
+                color: white;
+            }
+        }
+
+        video {
+            width: 75vw;
+            height: 75vh;
+            padding: 10vh 0;
+        }
+
+        #copyright {
+            padding: 0 0 20px;
+        }
+    }
+}
